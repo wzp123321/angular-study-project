@@ -5,4 +5,17 @@
   
   <div :[ngClass]="{'red':className}">11111111111111111</div>
   <div  :[ngStyle]="{'color':color}">22222222222</div>
+
+  <div :[ngSwitch]="case">
+    <div *ngSwitchCase="1">outp111111111111111ut</div>
+    <div *ngSwitchCase="2">out222222ut1</div>
+    <div *ngSwitchDefault>output4</div>
+  </div>
+
+  
+  <button (click)="onCaseAdd()">onCaseAdd</button>
+
+  
+  <input type="text" [(ngModel)]="value" />
+  <h1>value---------------------{{value}}</h1>
 </div>

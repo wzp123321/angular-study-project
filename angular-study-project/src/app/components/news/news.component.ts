@@ -11,16 +11,24 @@ export class NewsComponent implements OnInit {
 
   public imgUrl:string = '../../../assets/bj.jpg'
 
-  public case:number = 2;
+  public case:number = 1;
 
   public className:boolean=true;
 
   public color:string = 'blue'
 
+  public date:Date = new Date();
+
+  public value:string =''
+
   constructor() { }
 
   ngOnInit(): void {
     console.log('components--------------news----------init');
+  }
+
+  onCaseAdd(){
+    this.case+=1;
   }
 
 }
