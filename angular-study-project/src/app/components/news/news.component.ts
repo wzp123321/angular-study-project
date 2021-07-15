@@ -11,6 +11,12 @@ export class NewsComponent implements OnInit {
 
   public imgUrl:string = '../../../assets/bj.jpg'
 
+  public case:number = 2;
+
+  public className:boolean=true;
+
+  public color:string = 'blue'
+
   constructor() { }
 
   ngOnInit(): void {
