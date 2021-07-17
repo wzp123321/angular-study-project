@@ -839,7 +839,7 @@
   <div [innerHtml]="content"></div>
   <div *ngFor="let item of list">{{item.id}}----------------------------{{item.name}}</div>
   <div *ngIf="flag">条件-------------flag--------------------{{flag}}</div>
-  <app-to-do-list></app-to-do-list>
+  <app-to-do-list #todoListComp [todoTitle]="todoTitle" (childEmit)="childEmit()"></app-to-do-list>
 
 
 

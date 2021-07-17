@@ -1,8 +1,10 @@
 <div class="todo-list">
+  <h1>父组件传值过来----------------------{{todoTitle}}</h1>
+  <button (click)="sendMessage()">我来修改父组件传值</button>
   <input [(ngModel)]="inputValue" (keyup.enter)="onPush()" />
   <div class="todo-list-wrapper">
     <div class="undo">
-      <h1>待办事项</h1>
+      <h1  #todList>待办事项</h1>
       <div *ngIf="todoList.length > 0">
         <div *ngFor="let item of todoList">
           <span><input type="checkbox" [(ngModel)]="item.checked"/>{{ item.title }}</span>

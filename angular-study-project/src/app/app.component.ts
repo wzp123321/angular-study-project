@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+
+  @ViewChild('todoListComp')todoListComp:any;
+
   title = 'test';
+
+  public todoTitle:string = '我是传给todo的'
 
   public newTitle:string = '传给news组建的值';
 
@@ -27,5 +32,12 @@ export class AppComponent {
 
   ngOnInit(){
     console.log('根组件init');
+  }
+  ngAfterViewInit(){
+    this.todoListComp.test();
+  }
+
+  childEmit(){
+    this.todoTitle = 'send--message'
   }
 }

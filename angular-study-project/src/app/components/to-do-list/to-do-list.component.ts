@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild,Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-to-do-list',
@@ -6,14 +6,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-list.component.less'],
 })
 export class ToDoListComponent implements OnInit {
+
+@Input() public todoTitle:string='';
+
   public inputValue: string = '';
 
   public todoList: { title: string; checked: boolean }[] = [];
   public undoList: { title: string; checked: boolean }[] = [];
 
+  @ViewChild('todList') todList:any ;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  @Output() public childEmit:EventEmitter<any> = new EventEmitter();
+
+  sendMessage(){
+    this.childEmit.emit('test')
+  }
+
+  ngAfterViewInit(){
+    this.todList.nativeElement.style.color='red';
+  }
 
   /**
    * 添加待办事件
@@ -65,5 +80,9 @@ export class ToDoListComponent implements OnInit {
       this.todoList = [...this.todoList, ...checked];
       this.undoList = unchecked;
     }
+  }
+
+  test(){
+    console.log('这是test、');
   }
 }
