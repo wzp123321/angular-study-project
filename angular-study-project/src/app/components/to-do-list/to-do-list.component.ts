@@ -1,4 +1,11 @@
-import { Component, OnInit ,ViewChild,Input,Output,EventEmitter} from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-to-do-list',
@@ -6,28 +13,27 @@ import { Component, OnInit ,ViewChild,Input,Output,EventEmitter} from '@angular/
   styleUrls: ['./to-do-list.component.less'],
 })
 export class ToDoListComponent implements OnInit {
-
-@Input() public todoTitle:string='';
+  @Input() public todoTitle: string = '';
 
   public inputValue: string = '';
 
   public todoList: { title: string; checked: boolean }[] = [];
   public undoList: { title: string; checked: boolean }[] = [];
 
-  @ViewChild('todList') todList:any ;
+  @ViewChild('todList') todList: any;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  @Output() public childEmit:EventEmitter<any> = new EventEmitter();
+  @Output() public childEmit: EventEmitter<any> = new EventEmitter();
 
-  sendMessage(){
-    this.childEmit.emit('test')
+  sendMessage() {
+    this.childEmit.emit('test');
   }
 
-  ngAfterViewInit(){
-    this.todList.nativeElement.style.color='red';
+  ngAfterViewInit() {
+    this.todList.nativeElement.style.color = 'red';
   }
 
   /**
@@ -82,7 +88,7 @@ export class ToDoListComponent implements OnInit {
     }
   }
 
-  test(){
+  test() {
     console.log('这是test、');
   }
 }
