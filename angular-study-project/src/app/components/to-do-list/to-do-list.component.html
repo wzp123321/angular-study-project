@@ -1,0 +1,25 @@
+<div class="todo-list">
+  <input [(ngModel)]="inputValue" (keyup.enter)="onPush()" />
+  <div class="todo-list-wrapper">
+    <div class="undo">
+      <h1>待办事项</h1>
+      <div *ngIf="todoList.length > 0">
+        <div *ngFor="let item of todoList">
+          <span><input type="checkbox" [(ngModel)]="item.checked"/>{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="btn">
+        <button [disabled]="checkTodoLen(todoList)" (click)="onTodoListStatusChange('todo')">></button>
+        <button [disabled]="checkTodoLen(undoList)" (click)="onTodoListStatusChange('undo')"><</button>
+    </div>
+    <div class="do">
+      <h1>已办事项</h1>
+      <div *ngIf="undoList.length > 0">
+        <div *ngFor="let item of undoList">
+          <span><input type="checkbox"  [(ngModel)]="item.checked"/>{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

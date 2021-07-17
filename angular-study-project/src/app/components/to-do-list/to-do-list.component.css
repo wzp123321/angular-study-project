@@ -1,0 +1,26 @@
+.todo-list {
+  padding: 24px;
+  background-color: #fff;
+}
+.todo-list-wrapper {
+  display: flex;
+  padding-bottom: 40px;
+  min-height: 240px;
+}
+.todo-list-wrapper > div {
+  padding: 0 24px;
+}
+.todo-list-wrapper .btn {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.todo-list-wrapper .btn button {
+  cursor: pointer;
+  display: block;
+  padding: 6px 10px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+}

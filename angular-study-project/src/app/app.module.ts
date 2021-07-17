@@ -12,11 +12,12 @@ import { AppRoutingModule } from './app-routing.module';
 // 根组件
 import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
+import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 
 // @NgModule装饰器，接收一个元数据对象，告诉angular如何编译启动应用
 @NgModule({
   declarations: [// 配置当前项目运行的组件
-    AppComponent, NewsComponent
+    AppComponent, NewsComponent, ToDoListComponent
   ],
   imports: [ // 配置当前模块运行依赖的其他模块
     BrowserModule,
