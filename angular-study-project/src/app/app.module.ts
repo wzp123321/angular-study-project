@@ -9,22 +9,27 @@ import { FormsModule } from "@angular/forms"
 import { BrowserModule } from '@angular/platform-browser';
 // angular路由模块
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 // 根组件
 import { AppComponent } from './app.component';
+// 自定义组件
 import { NewsComponent } from './components/news/news.component';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
-
+import { RequestComponent } from './components/request/request.component'
+// angular服务
+import { RequestService } from './services/request.service';
 // @NgModule装饰器，接收一个元数据对象，告诉angular如何编译启动应用
 @NgModule({
   declarations: [// 配置当前项目运行的组件
-    AppComponent, NewsComponent, ToDoListComponent
+    AppComponent, NewsComponent, ToDoListComponent, RequestComponent
   ],
   imports: [ // 配置当前模块运行依赖的其他模块
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [], // 配置项目所需要的服务
+  providers: [RequestService], // 配置项目所需要的服务
   bootstrap: [AppComponent] //指定应用的主视图（称为根组件），通过引导根AppModule来启动应用，这里一般写的是根组件
 })
 

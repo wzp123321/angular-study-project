@@ -22,18 +22,47 @@ export class ToDoListComponent implements OnInit {
 
   @ViewChild('todList') todList: any;
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
   @Output() public childEmit: EventEmitter<any> = new EventEmitter();
+  
+  constructor() {
+    console.log('constructor-------------------------------------');
+  }
+  
+  ngOnChanges(){
+    console.log('ngOnChanges-------------------------------------');
+  }
 
-  sendMessage() {
-    this.childEmit.emit('test');
+  ngOnInit(): void {
+    console.log('ngOnInit-------------------------------------');
+  }
+
+  ngDoCheck(){
+    console.log('ngDoCheck-------------------------------------');
+  }
+
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked-------------------------------------');
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit-------------------------------------');
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked-------------------------------------');
   }
 
   ngAfterViewInit() {
+    console.log('ngAfterViewInit-------------------------------------');
     this.todList.nativeElement.style.color = 'red';
+  }
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy-------------------------------------');
+  }
+  
+  sendMessage() {
+    this.childEmit.emit('test');
   }
 
   /**
