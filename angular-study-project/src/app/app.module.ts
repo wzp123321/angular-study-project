@@ -18,10 +18,13 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 import { RequestComponent } from './components/request/request.component'
 // angular服务
 import { RequestService } from './services/request.service';
+import { PageComponent } from './components/page/page.component';
+import { SecondComponent } from './components/second/second.component';
+import { ThirdComponent } from './components/third/third.component';
 // @NgModule装饰器，接收一个元数据对象，告诉angular如何编译启动应用
 @NgModule({
   declarations: [// 配置当前项目运行的组件
-    AppComponent, NewsComponent, ToDoListComponent, RequestComponent
+    AppComponent, NewsComponent, ToDoListComponent, RequestComponent, PageComponent, SecondComponent, ThirdComponent
   ],
   imports: [ // 配置当前模块运行依赖的其他模块
     BrowserModule,
